@@ -1,0 +1,22 @@
+function createGridBspline(gridSRUPontosControle){
+  let gridBspline = [];
+  let lengthI = gridSRUPontosControle.length;
+  // PEGAR OS INDICES PARA LINHAS
+
+
+  for (let i = 0; i < lengthI; i++) {
+    gridBspline.push(calculateBspline(gridSRUPontosControle[i], nSegmentosU));
+  }
+  console.log(gridBspline);
+  gridBspline = transporUmaMatriz(gridBspline);
+  console.log(gridBspline);
+  
+  
+  gridBspline = transporUmaMatriz(gridBspline);
+  lengthI = gridBspline.length;
+  let gridBsplineFinal = [];
+  for (let i = 0; i < lengthI; i++) {
+    gridBsplineFinal.push(calculateBspline(gridBspline[i], nSegmentosV));
+  }
+  return gridBspline;
+}
